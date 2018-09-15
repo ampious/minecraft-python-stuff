@@ -10,8 +10,15 @@ args = parser.parse_args()
 
 mc = Minecraft.create()
 
+curr_coords = mc.player.getPos()
+
 if args.coords != '10,110,12':
-    (x, y, z) = args.coords.split(',')
+    #coordinates = [int(n) for n in args.coords.split(',')]
+    coordinates = [float(n) for n in args.coords.split(',')]
+    #(int(x), int(y), int(z)) = args.coords.split(',')
+    x = coordinates[0]
+    y = coordinates[1]
+    z = coordinates[2]
 else:
     x = 10
     y = 110
